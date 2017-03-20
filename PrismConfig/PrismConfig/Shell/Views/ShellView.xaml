@@ -1,0 +1,45 @@
+﻿<Window x:Class="Shell.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://www.codeplex.com/prism"       
+        Title="Prism Shell" WindowStartupLocation="CenterScreen" 
+        Icon="../Images/PnPIcon.ico"
+        mc:Ignorable="d" d:DesignHeight="720" d:DesignWidth="900">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="100"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- App Banner -->
+        <StackPanel Grid.ColumnSpan="3">
+            <TextBlock Text="Prism Module Configure with app.config + Dynamic Menu" Foreground="SlateGray" FontSize="26" Margin="8"/>
+            <ListBox prism:RegionManager.RegionName="StartupMenuRegion" SelectedItem="{Binding SelectedMenu, Mode=TwoWay}"
+                     BorderThickness="1" FontSize="16" Foreground="White" Background="SlateGray" Margin="8">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>           
+        </StackPanel>
+
+        <ContentControl Grid.Row="1" Grid.Column="0" prism:RegionManager.RegionName="LeftRegion"
+                        VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="8"/>
+
+        <GridSplitter Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                      Width="5" ShowsPreview="True" ResizeDirection="Columns" Background="Transparent"/>
+
+        <ContentControl Grid.Row="1" Grid.Column="2" prism:RegionManager.RegionName="RightRegion"
+                        VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="8"/>
+    </Grid>
+
+</Window>
