@@ -1,0 +1,16 @@
+﻿<prism:ModuleCatalog xmlns="clr-namespace:Prism.Modularity;assembly=Prism.Wpf"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:prism="clr-namespace:Prism.Modularity;assembly=Prism.Wpf">
+
+    <prism:ModuleInfo Ref="Module1.dll"
+                      ModuleName="Module1"
+                      ModuleType="Module1.ModuleInit, Module1, Version=1.0.0.0"
+                      InitializationMode="WhenAvailable"/>
+
+    <prism:ModuleInfo Ref="Module2.dll"
+                      ModuleName="Module2"
+                      ModuleType="Module2.ModuleInit, Module2, Version=1.0.0.0"
+                      InitializationMode="WhenAvailable" />
+</prism:ModuleCatalog>
+
