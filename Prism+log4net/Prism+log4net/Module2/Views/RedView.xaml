@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Module2.Views.RedView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://www.codeplex.com/prism"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="LightPink">
+        <TextBlock Text="Module 2" Margin="8"/>
+        <Button  Content="Debug" Command="{Binding ThrowExceptionCommand}" CommandParameter="Debug" HorizontalAlignment="Left" Width="100" Margin="8"/>
+        <Button  Content="Error" Command="{Binding ThrowExceptionCommand}" CommandParameter="Error" HorizontalAlignment="Left" Width="100" Margin="8"/>
+        <Button  Content="Fatal" Command="{Binding ThrowExceptionCommand}" CommandParameter="Fatal" HorizontalAlignment="Left" Width="100" Margin="8"/>
+        <Button  Content="Info" Command="{Binding ThrowExceptionCommand}" CommandParameter="Info" HorizontalAlignment="Left" Width="100" Margin="8"/>
+        <Button  Content="Warn" Command="{Binding ThrowExceptionCommand}" CommandParameter="Warn" HorizontalAlignment="Left" Width="100" Margin="8"/>
+    </StackPanel>
+
+</UserControl>
