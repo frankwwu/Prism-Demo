@@ -1,0 +1,21 @@
+﻿<Popup x:Class="Infrastructure.StartMenu.StartMenu"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+       xmlns:prism="http://www.codeplex.com/prism"
+       xmlns:inf="clr-namespace:Infrastructure"
+       StaysOpen="False" Placement="Bottom" PopupAnimation="Slide"
+       mc:Ignorable="d" d:DesignHeight="50" d:DesignWidth="300" >
+
+    <Border BorderBrush="LightGray" BorderThickness="1" >
+        <ListBox Grid.Row="1" prism:RegionManager.RegionName="{x:Static inf:RegionNames.StartupRegion}"
+                 SelectedItem="{Binding SelectedModule, Mode=TwoWay}" FontSize="16" >
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+    </Border>
+</Popup>

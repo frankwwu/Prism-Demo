@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Modules>  
+  <Module ModuleName="Module1" DisplayName="Module1" Argument="m1" IsEnabeled="true" />
+  <Module ModuleName="Module2" DisplayName="Module2" Argument="m2" IsEnabeled="true" />
+</Modules>

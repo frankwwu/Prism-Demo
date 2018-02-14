@@ -1,0 +1,1 @@
+xsd Apps.xsd /c /n:Apps
