@@ -46,6 +46,14 @@ namespace MultiShell
                 }
             });
 
+            _eventAggregator.GetEvent<IconChangedEvent>().Subscribe(args =>
+            {
+                if (args.ModuleInstanceID.Equals(_moduleInstanceID))
+                {
+                    Icon = args.Icon;
+                }
+            });
+
             this.AccentColors = ThemeManager.Accents.Select(a => new AccentColorMenuData()
             {
                 Name = a.Name,
@@ -93,6 +101,14 @@ namespace MultiShell
         {
             get { return (WindowState)Enum.Parse(typeof(WindowState), Properties.Settings.Default.WindowState); }
             set { Properties.Settings.Default.WindowState = value.ToString(); Properties.Settings.Default.Save(); }
+        }
+
+        private ImageSource _icon;
+
+        public ImageSource Icon
+        {
+            get { return _icon; }
+            set { _icon = value; RaisePropertyChanged(); }
         }
 
         #region OpenShellCommand

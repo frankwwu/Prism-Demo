@@ -7,7 +7,8 @@
                       xmlns:prism="http://www.codeplex.com/prism"
                       xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Wpf"
                       xmlns:beh="clr-namespace:MultiShell.Behaviors"
-                      WindowStyle="None" BorderThickness="0" BorderBrush="Transparent" 
+                      WindowStyle="None" 
+                      Icon="{Binding Icon, UpdateSourceTrigger=PropertyChanged}" 
                       mvvm:ViewModelLocator.AutoWireViewModel="True" Title="{Binding Caption}" 
                       WindowState="{Binding WindowState, Mode=TwoWay}">
     <i:Interaction.Behaviors>

@@ -8,6 +8,7 @@ using System;
 using System.Reflection;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Module1.ViewModels
 {
@@ -28,12 +29,17 @@ namespace Module1.ViewModels
         
             // Events      
             Version version = Assembly.GetExecutingAssembly().GetName().Version;
-            ModuleInfoArgs args = new ModuleInfoArgs() { ShellCaption = "Module 1" };
+            ModuleInfoArgs args = new ModuleInfoArgs() { ShellCaption = "Module 1", ModuleInstanceID = _moduleInstanceID };
             _eventAggregator.GetEvent<InitialShellEvent>().Publish(args);
             _eventAggregator.GetEvent<ShellClosingEvent>().Subscribe(OnShellClosing);
-         
+
+            IconChangedEventArgs iconArgs = new IconChangedEventArgs();
+            iconArgs.ModuleInstanceID = _moduleInstanceID;
+            iconArgs.Icon = BitmapFrame.Create(new Uri(@"pack://application:,,,/Module1;component/Module1.png"));
+            _eventAggregator.GetEvent<IconChangedEvent>().Publish(iconArgs);
+
             // Commands
-            StartMenuCommand = new DelegateCommand<object>(StartMenu);
+            StartMenuCommand = new DelegateCommand<object>(StartMenu);           
 
             Time = DateTime.Now.ToLongTimeString();
             byte[] rgb = new byte[3];

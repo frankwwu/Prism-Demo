@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Prism.Events;
+using System;
 using System.ComponentModel;
-using Prism.Events;
+using System.Windows.Media;
 
 namespace Infrastructure.Events
 {
@@ -18,6 +19,12 @@ namespace Infrastructure.Events
         public CancelEventArgs EventArgs { get; set; }
     }
 
+    public class IconChangedEventArgs : EventArgs
+    {
+        public string ModuleInstanceID { get; set; }
+        public ImageSource Icon { get; set; }
+    }
+
     #endregion EventArgs
 
     #region Events
@@ -27,6 +34,10 @@ namespace Infrastructure.Events
     }
 
     public class ShellClosingEvent : PubSubEvent<ShellClosingEventArgs>
+    {
+    }
+
+    public class IconChangedEvent : PubSubEvent<IconChangedEventArgs>
     {
     }
 

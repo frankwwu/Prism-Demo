@@ -1,13 +1,12 @@
 ﻿<UserControl x:Class="Module1.LaunchView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}"
+             Height="{Binding RelativeSource={RelativeSource Self}, Path=ActualWidth}"
              mc:Ignorable="d" d:DesignHeight="200" d:DesignWidth="200" >
-    <DockPanel Background="Orange" LastChildFill="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
+    <DockPanel Background="Navy" LastChildFill="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
         <TextBlock Text="Module1" FontSize="16" Foreground="White" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Margin="5"/>
-        <TextBlock Text=" " Foreground="White" HorizontalAlignment="Center" DockPanel.Dock="Bottom" />
-        <TextBlock Text="B" FontSize="80" FontFamily="Webdings" HorizontalAlignment="Center" Foreground="White" DockPanel.Dock="Top" Margin="5"/>
+        <Image Source="Module1.png" Stretch="Uniform" Margin="5"/>
     </DockPanel>
 </UserControl>
