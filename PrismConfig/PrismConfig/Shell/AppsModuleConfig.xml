@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Modules>  
+  <module assemblyFile="Module1.dll" moduleType="Module1.Module1Init, Module1" moduleName="Module1" startupLoaded="true" />
+  <module assemblyFile="Module2.dll" moduleType="Module2.Module2Init, Module2" moduleName="Module2" startupLoaded="true" />
+</Modules>

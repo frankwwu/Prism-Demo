@@ -1,53 +1,25 @@
-﻿using System;
+﻿using Prism.Ioc;
+using Prism.Modularity;
+using Prism.Unity;
+using Shell.Views;
 using System.Windows;
 
 namespace Shell
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        protected override void OnStartup(StartupEventArgs e)
+        protected override Window CreateShell()
         {
-            base.OnStartup(e);
-
-#if (DEBUG)
-            RunInDebugMode();
-#else
-            RunInReleaseMode();
-#endif
-            this.ShutdownMode = ShutdownMode.OnMainWindowClose;
+            return Container.Resolve<ShellView>();
         }
-
-        private static void RunInDebugMode()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            Bootstrapper bootstrapper = new Bootstrapper();
-            bootstrapper.Run();
+            //register class object here
+            //containerRegistry.RegisterInstance<ShellView>(_tempShellView);
         }
-
-        private static void RunInReleaseMode()
+        protected override IModuleCatalog CreateModuleCatalog()
         {
-            AppDomain.CurrentDomain.UnhandledException += AppDomainUnhandledException;
-            try
-            {
-                Bootstrapper bootstrapper = new Bootstrapper();
-                bootstrapper.Run();
-            }
-            catch (Exception ex)
-            {
-                HandleException(ex);
-            }
-        }
-
-        private static void AppDomainUnhandledException(object sender, UnhandledExceptionEventArgs e)
-        {
-            HandleException(e.ExceptionObject as Exception);
-        }
-
-        private static void HandleException(Exception ex)
-        {
-            if (ex == null) return;
-
-            MessageBox.Show(Shell.Properties.Resources.UnhandledException);
-            Environment.Exit(1);
+            return new DirectoryModuleCatalog() { ModulePath = "." };
         }
     }
 }
