@@ -1,54 +1,33 @@
-﻿using System;
+﻿using log4net.Config;
+using Prism.Ioc;
+using Prism.Modularity;
+using Prism.Unity;
+using Shell.Views;
 using System.Windows;
 
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 namespace Shell
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            // Configures the log4net system based on app.config.
+            XmlConfigurator.Configure();
             base.OnStartup(e);
-
-#if (DEBUG)
-            RunInDebugMode();
-#else
-            RunInReleaseMode();
-#endif
-            this.ShutdownMode = ShutdownMode.OnMainWindowClose;
         }
 
-        private static void RunInDebugMode()
+        protected override Window CreateShell()
         {
-            Bootstrapper bootstrapper = new Bootstrapper();
-            bootstrapper.Run();
+            return Container.Resolve<ShellView>();
         }
-
-        private static void RunInReleaseMode()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            AppDomain.CurrentDomain.UnhandledException += AppDomainUnhandledException;
-            try
-            {
-                Bootstrapper bootstrapper = new Bootstrapper();
-                bootstrapper.Run();
-            }
-            catch (Exception ex)
-            {
-                HandleException(ex);
-            }
+            //register class object here
+            //containerRegistry.RegisterInstance<ShellView>(_tempShellView);            
         }
-
-        private static void AppDomainUnhandledException(object sender, UnhandledExceptionEventArgs e)
+        protected override IModuleCatalog CreateModuleCatalog()
         {
-            HandleException(e.ExceptionObject as Exception);
-        }
-
-        private static void HandleException(Exception ex)
-        {
-            if (ex == null) return;
-
-            MessageBox.Show(Shell.Properties.Resources.UnhandledException);
-            Environment.Exit(1);
+            return new DirectoryModuleCatalog() { ModulePath = "." };
         }
     }
 }

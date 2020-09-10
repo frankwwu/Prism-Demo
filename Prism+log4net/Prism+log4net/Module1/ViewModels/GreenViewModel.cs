@@ -1,9 +1,7 @@
-﻿using System;
-using System.Reflection;
-using log4net;
+﻿using log4net;
 using Prism.Commands;
-using Prism.Logging;
 using Prism.Mvvm;
+using System;
 
 namespace Module1.ViewModels
 {

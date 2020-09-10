@@ -1,18 +1,18 @@
-﻿using System;
-using System.Reflection;
-using log4net;
+﻿using log4net;
 using Prism.Commands;
-using Prism.Logging;
 using Prism.Mvvm;
+using System;
 
 namespace Module2.ViewModels
 {
     public class RedViewModel : BindableBase
     {
-        private readonly ILog _logger = LogManager.GetLogger("Module2");
+        private readonly ILog _logger;
 
-        public RedViewModel()
+        public RedViewModel(ILog logger)
         {
+            _logger = logger;
+
             ThrowExceptionCommand = new DelegateCommand<object>(ThrowException);
         }
 
