@@ -88,6 +88,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppsModuleConfig.cs" />
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -167,26 +168,19 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="AppsModuleConfig.xml" />
+    <None Include="AppsModuleConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommonServiceLocator">
       <Version>2.0.5</Version>
-    </PackageReference>
-    <PackageReference Include="Prism.Core">
-      <Version>7.2.0.1422</Version>
     </PackageReference>
     <PackageReference Include="Prism.Unity">
       <Version>7.2.0.1422</Version>
     </PackageReference>
     <PackageReference Include="Prism.Wpf">
       <Version>7.2.0.1422</Version>
-    </PackageReference>
-    <PackageReference Include="Unity">
-      <Version>5.11.7</Version>
-    </PackageReference>
-    <PackageReference Include="Unity.Abstractions">
-      <Version>5.11.6</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -88,6 +88,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppsModuleConfig.cs">
+      <DependentUpon>AppsModuleConfig.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -115,6 +118,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="AppsModuleConfig.xsd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -181,7 +185,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="AppsModuleConfig.xml" />
+    <None Include="AppsModuleConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
