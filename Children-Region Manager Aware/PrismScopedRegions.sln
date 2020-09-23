@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismScopedRegions", "PrismScopedRegions\PrismScopedRegions.csproj", "{D1554C21-4298-4AA8-8258-4E8946C6EF10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{62C601B6-0AE3-46D9-8F93-D3A08937FA7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleA", "ModuleA\ModuleA.csproj", "{D5FE992A-20EC-4E7D-BF06-A686B7E3EAF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{8CA8DFFC-8A35-461C-8F8D-C7A77027BB2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1554C21-4298-4AA8-8258-4E8946C6EF10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1554C21-4298-4AA8-8258-4E8946C6EF10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1554C21-4298-4AA8-8258-4E8946C6EF10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1554C21-4298-4AA8-8258-4E8946C6EF10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FE992A-20EC-4E7D-BF06-A686B7E3EAF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FE992A-20EC-4E7D-BF06-A686B7E3EAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FE992A-20EC-4E7D-BF06-A686B7E3EAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FE992A-20EC-4E7D-BF06-A686B7E3EAF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA8DFFC-8A35-461C-8F8D-C7A77027BB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA8DFFC-8A35-461C-8F8D-C7A77027BB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA8DFFC-8A35-461C-8F8D-C7A77027BB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA8DFFC-8A35-461C-8F8D-C7A77027BB2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5FE992A-20EC-4E7D-BF06-A686B7E3EAF6} = {62C601B6-0AE3-46D9-8F93-D3A08937FA7A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+		SolutionGuid = {CB51B505-EB3A-4BE1-B19C-98E6F282EB50}
+	EndGlobalSection
+EndGlobal
