@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{8CA8DFFC-8A35-461C-8F8D-C7A77027BB2D}"
 EndProject
@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{774E37
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiShell", "MultiShell\MultiShell.csproj", "{D1554C21-4298-4AA8-8258-4E8946C6EF10}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "References", "packages\References.csproj", "{FB03D2DC-9783-4876-841D-95CF1D843308}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module1", "Module1\Module1.csproj", "{7AC6E15B-740A-4159-8717-0F8624966D5A}"
 EndProject
@@ -34,10 +32,6 @@ Global
 		{D1554C21-4298-4AA8-8258-4E8946C6EF10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1554C21-4298-4AA8-8258-4E8946C6EF10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1554C21-4298-4AA8-8258-4E8946C6EF10}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB03D2DC-9783-4876-841D-95CF1D843308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB03D2DC-9783-4876-841D-95CF1D843308}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB03D2DC-9783-4876-841D-95CF1D843308}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB03D2DC-9783-4876-841D-95CF1D843308}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7AC6E15B-740A-4159-8717-0F8624966D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7AC6E15B-740A-4159-8717-0F8624966D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AC6E15B-740A-4159-8717-0F8624966D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,7 +45,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7AA13B9E-9ADC-440A-B121-F4FF32CADFBC}
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+		SolutionGuid = {7AA13B9E-9ADC-440A-B121-F4FF32CADFBC}
 	EndGlobalSection
 EndGlobal
